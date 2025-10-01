@@ -3,13 +3,21 @@ package main
 import "fmt"
 
 func main () {
-	const UsdToEur float64 = 0.85
-	const UsdToRub float64 = 83.74
-	var EurToRUb float64 
-	EurToRUb = UsdToRub / UsdToEur
+	eur, rub := InputCurrency()
+	var EurToRUb float64
+	EurToRUb = eur / rub
 
 	fmt.Println("Курс евро в рубли:",EurToRUb)
-
-
-	
 }
+
+func InputCurrency () (float64,float64) {
+var UsdToEur float64 
+fmt.Println("Введите курс доллара к евро:")
+fmt.Scan(&UsdToEur)
+var UsdToRub float64 
+fmt.Println("Введите курс доллара к рублю:")
+fmt.Scan(&UsdToRub)
+return UsdToEur,UsdToRub
+}
+
+func calculation (number int,OwnCurrency string,TartetCurrency string) ()
